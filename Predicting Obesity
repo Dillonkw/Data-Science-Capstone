@@ -1,0 +1,16 @@
+Predicting Obesity
+
+Background
+This project is for my data science master's capstone course at Merrimack College
+
+Research Question
+Can we classify people into different BMI categories (Underweight, Normal, Overweight, and Obese) based on demographic, dietary, questionnaire, and examination data?  Which features play the biggest role in making this decision? Are we able to estimate the probabilities for each category to detect early signs, helping with prevention? 
+
+Hypothesis
+Demographic, dietary, questionnaire, and examination data will accurately predict the class of someone's BMI.
+
+Prediction
+Dietary features, including total sugar, carbs, protein, energy, dietary fiber, total fat, and more, will be some of the most important features when predicting obesity risk.    
+
+
+
