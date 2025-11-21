@@ -28,7 +28,8 @@ TCHOLData <- read_xpt("RawData/TCHOL_L.xpt") #Cholesterol - Total
 UCPREGData <- read_xpt("RawData/UCPREG_L.xpt") #Urine Pregnancy Test
 WHQData <- read_xpt("RawData/WHQ_L.xpt") #Weight History	
 
-datasets <- list( #Puts all the individual datasets into one list called datasets 
+#Puts all the individual datasets into one list called datasets
+datasets <- list( 
   BMXData,
   BPQData,
   DemoData,
@@ -80,7 +81,7 @@ CleanedData <- CleanedData %>%
     Age = RIDAGEYR, #Demographic Features
     Gender = RIAGENDR,
     Race = RIDRETH1,
-    Country_of_Orgin = DMDBORN4,
+    Country_of_Origin = DMDBORN4,
     Education_Level = DMDEDUC2,
     Marital_Status = DMDMARTZ,
     Household_Size = DMDHHSIZ,
@@ -118,7 +119,13 @@ CleanedData <- CleanedData %>%
     Minutes_Sedentary_Activity = PAD680,
     Attempted_Weight_Loss_Past_Year = WHQ070
   )
-    
+ 
+#Change features that are labeled as numeric but are actually categorical
+CleanedData <- CleanedData %>% 
+  mutate(across(c("Gender","Race","Country_of_Origin","Education_Level","Marital_Status", "Health_Insurance",
+                  "Thyroid_Problem","Gallstones","Liver_Condition","Taking_Treatment_Anemia", "Blood_Cholesterol_Meds",
+                  "Told_High_BP", "Told_High_BP_2", "Attempted_Weight_Loss_Past_Year"), as.factor))
+
 #Function to add the features together. 
 #If one has a value and the other has a NA, then the one value will be used. 
 #If both have value it will add the value together. 
@@ -178,7 +185,8 @@ CleanedData <- CleanedData %>%
 table(CleanedData$BMI)
 
 
-table(CleanedData$Total_Caffeine)
+
+
 
 
 
