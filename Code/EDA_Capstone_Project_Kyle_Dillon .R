@@ -184,10 +184,6 @@ CleanedData <- CleanedData %>%
 
 table(CleanedData$BMI)
 
-
-
-
-
-
+saveRDS(CleanedData, "CleanedData.rds")
 
 
