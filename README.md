@@ -24,6 +24,8 @@ Department of Public Health
 Sum_func <- function(a,b) {  
   ifelse(is.na(a) & is.na(b), NA, rowSums(cbind(a,b), na.rm = TRUE))  
   }  
+  Apply Function  
+  Total = Sum_func(Var1, Var2)    
 
 - Function to add the features together     
 - If one has a value and the other has a NA, then the one value will be used    
