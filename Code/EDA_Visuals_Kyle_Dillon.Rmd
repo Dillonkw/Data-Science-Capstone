@@ -27,7 +27,7 @@ library(patchwork)
 
 
 ```{r}
-CleanedData <- readRDS("CleanedData.rds")
+CleanedDataNew <- readRDS("CleanedData.rds")
 ```
 
 
@@ -54,13 +54,18 @@ sum_cat_var
 #Table 2
 ```{r}
 sum_con_var <- CleanedData %>% 
-  select("Age", "Household_Size", "Family_Income_to_Poverty_Ratio", "Total_Energy", "Total_Protein", "Total_Carbs", "Total_Sugar", "Total_Fiber", "Total_Fat", 
-         "Total_Sat_Fat", "Total_Mono_Sat_Fat", "Total_Poly_Sat_Fat", "Total_Cholesterol", "Total_Lycopene", "Total_Lutein_Zeaxanthin", "Total_Thiamin", "Total_Riboflavin", 
-         "Total_Niacin", "Total_VitaminB6", "Total_Folic_Acid", "Total_Folate_DFE", "Total_Choline", "Total_VitaminB12", "Total_VitaminC", "Total_VitaminK", "Total_VitaminD", 
-         "Total_Calcium", "Total_Phosphorus", "Total_Magnesium", "Total_Iron", "Total_Zinc", "Total_Copper", "Total_Sodium","Total_Potassium", "Total_Selenium", "Total_Caffeine",
-         "Vitamin_E_Alpha_Tocopherol", "Added_Alpha_Tocopherol", "Retinol", "Vitamin_A", "Alpha_Carotene", "Beta_Carotene", "Beta_Cryptoxanthin",
-         "Total_Folate", "Food_Folate", "Added_Vitamin_B12", "Theobromine", "Alcohol", "Moisture", "Total_Plain_Water", "Iodine", "Plasma_Fasting_Glucose",
-         "Insulin", "Glycohemoglobin", "Sleep_Hours_Weekdays", "Sleep_Hours_Weekends", "Minutes_Moderate_LTPA", "Minutes_Vigorous_LTPA", "Minutes_Sedentary_Activity",) %>%
+  select("Age", "Household_Size", "Family_Income_to_Poverty_Ratio", "Total_Energy", "Total_Protein", 
+         "Total_Carbs", "Total_Sugar", "Total_Fiber", "Total_Fat", "Total_Sat_Fat", "Total_Mono_Sat_Fat", 
+         "Total_Poly_Sat_Fat", "Total_Cholesterol", "Total_Lycopene", "Total_Lutein_Zeaxanthin", 
+         "Total_Thiamin", "Total_Riboflavin", "Total_Niacin", "Total_VitaminB6", "Total_Folic_Acid", 
+         "Total_Folate_DFE", "Total_Choline", "Total_VitaminB12", "Total_VitaminC", "Total_VitaminK", 
+         "Total_VitaminD", "Total_Calcium", "Total_Phosphorus", "Total_Magnesium", "Total_Iron", 
+         "Total_Zinc", "Total_Copper", "Total_Sodium","Total_Potassium", "Total_Selenium", "Total_Caffeine",
+         "Vitamin_E_Alpha_Tocopherol", "Added_Alpha_Tocopherol", "Retinol", "Vitamin_A", "Alpha_Carotene", 
+         "Beta_Carotene", "Beta_Cryptoxanthin","Total_Folate", "Food_Folate", "Added_Vitamin_B12", "Theobromine", 
+         "Alcohol", "Moisture", "Total_Plain_Water", "Iodine", "Plasma_Fasting_Glucose", "Insulin", "Glycohemoglobin", 
+         "Sleep_Hours_Weekdays", "Sleep_Hours_Weekends", "Minutes_Moderate_LTPA", 
+         "Minutes_Vigorous_LTPA", "Minutes_Sedentary_Activity",) %>%
   summarize(across(everything(),
                    list(
                      Mean = ~mean(.x, na.rm = TRUE),
@@ -80,7 +85,6 @@ sum_con_var <- CleanedData %>%
   mutate(across(where(is.numeric), ~round(.x, 2)))
 sum_con_var
 ```
-
 
 
 #Graph 1 (Distribution of Target Variable (BMI))
@@ -113,15 +117,12 @@ mergeBMI
 ```
 
 
-
-
-
-
 #Graph 2 (Corrplot)
 ```{r}
 nutrient_vars <- CleanedData %>%
-  select(Total_Energy, Total_Protein, Total_Carbs, Total_Sugar, Total_Fiber, Total_Fat, Total_Sat_Fat, Total_Mono_Sat_Fat, Total_Poly_Sat_Fat, Total_Cholesterol,
-         Vitamin_A, Retinol, Alpha_Carotene, Beta_Carotene, Beta_Cryptoxanthin, Total_Folate, Total_Folate_DFE, Total_Folic_Acid)
+  select(`Total_Energy`, `Total_Protein`, `Total_Carbs`, Total_Sugar, Total_Fiber, Total_Fat, 
+         Total_Sat_Fat, Total_Mono_Sat_Fat, Total_Poly_Sat_Fat, Total_Cholesterol, Vitamin_A, Retinol, 
+         Alpha_Carotene, Beta_Carotene, Beta_Cryptoxanthin, Total_Folate, Total_Folate_DFE, Total_Folic_Acid, BMXBMI)
 ```
 
 
@@ -142,7 +143,6 @@ corrplot(corr_matrix,
          addCoef.col = "black", 
          number.cex = 0.7)
 ```
-
 
 
 #Graph 3 (Distribution of Macro and Micro Nutrients)
@@ -196,7 +196,7 @@ ggplot(CleanedData, aes(x = Total_Fat, y = Total_Mono_Sat_Fat)) +
 ```
 
 
-#Grpah 5
+#Grpah 5 (Box plot)
 ```{r}
 ggplot(CleanedData, aes(x = factor(BMI), y = Plasma_Fasting_Glucose, fill = factor(BMI)))+
   geom_boxplot()+
