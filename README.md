@@ -21,11 +21,14 @@ National Health and Nutrition Examination Survey (NHANES)
 Department of Public Health  
 
 ### Custom Function  
-Sum_func <- function(a,b) {
-  ifelse(is.na(a) & is.na(b), NA, rowSums(cbind(a,b), na.rm = TRUE))
-}  
+Sum_func <- function(a,b) {  
+  ifelse(is.na(a) & is.na(b), NA, rowSums(cbind(a,b), na.rm = TRUE))  
+  }  
 
 - Function to add the features together     
 - If one has a value and the other has a NA, then the one value will be used    
 - If both have value it will add the value together   
 - If both are NA, it keeps the total value as NA for that row   
+
+
+
