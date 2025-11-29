@@ -1,5 +1,5 @@
 # Predicting Healthy BMI
-Kyle Dillon  
+### Kyle Dillon  
 
 ### Defined Research Question  
 Can we predict which adults have a healthy BMI primarily based on their nutrient intake, along with other demographic, laboratory, and questionnaire variables from the National Health and Nutrition Examination Survey? Which nutrients play the biggest role in making this decision?
