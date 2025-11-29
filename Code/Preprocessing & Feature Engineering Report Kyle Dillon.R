@@ -243,7 +243,7 @@ CleanedData <- CleanedData %>%
 #If both are NA, it keeps the total value as NA for that row. 
 Sum_func <- function(a,b) {
   ifelse(is.na(a) & is.na(b), NA, rowSums(cbind(a,b), na.rm = TRUE))
-}
+  }
 
 
 CleanedData <- CleanedData %>%
