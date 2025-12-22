@@ -11,14 +11,15 @@ Can we predict which adults have a healthy BMI primarily based on their nutrient
 Nutrition intake, along with demographic, questionnaire, and laboratory variables, will be able to predict if an adult has a healthy BMI because these variables are indicators of dietary behaviors, lifestyle patterns, and medical history, which affect a person's weight.
 
 ## Prediction  
-Adults who have a balanced nutritional intake, a strong lifestyle, and a stable medical history will have a healthy BMI. Variables like protein, fiber, fats, sugar, and micronutrients will be the most influential when predicting healthy BMI.  
+Adults who have a balanced nutritional intake, a strong lifestyle, and a stable medical history will have a healthy BMI. We predict that a combination of macronutrients, including fat, protein, and carbs, will emerge as some of the variables that have the strongest effect on BMI, as exemplified by the machine learning model’s feature importance.
+  
 
 ## Data Sets  
 National Health and Nutrition Examination Survey (NHANES)  
 (https://wwwn.cdc.gov/nchs/nhanes/)  
 
 ## Stakeholder  
-Department of Public Health  
+Department of Public Health (DPH)
 
 ## Custom Function  
 Sum_func <- function(a,b) {  
