@@ -18,9 +18,10 @@ Adults who have a balanced nutritional intake, a strong lifestyle, and a stable 
 National Health and Nutrition Examination Survey (NHANES)  
 (https://wwwn.cdc.gov/nchs/nhanes/)  
 
+### Cleaned Dataset Dimensions
 Observations: 17,721 | Variables: 108  
 
-### Outcome variable  
+### Outcome Variable  
 BMI_Binary  
 Healthy >= 18.5 & <= 24.9  
 Unhealthy = Everything else
@@ -40,11 +41,11 @@ Total = Sum_func(Var1, Var2)
 - If both have value it will add the value together   
 - If both are NA, it keeps the total value as NA for that row
 
-### Identify missing values function  
+### Identify Missing Values Function  
 num_missing <- sapply(CleanedData, function(x) sum(is.na(x)))  
 
 
-## How to run code  
+## How to Run Code  
 To run the code first, go into the Code folder and select which file you want to run. Then go into the Raw Data folder and download the necessary raw data files. After, go back to the file you selected and install the packages provided. Then set the working directory and run the code.     
 
 
