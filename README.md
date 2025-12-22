@@ -18,6 +18,13 @@ Adults who have a balanced nutritional intake, a strong lifestyle, and a stable 
 National Health and Nutrition Examination Survey (NHANES)  
 (https://wwwn.cdc.gov/nchs/nhanes/)  
 
+Observations: 17,721 | Variables: 108  
+
+###Outcome variable  
+BMI_Binary  
+Healthy >= 18.5 & <= 24.9  
+Unhealthy = Everything else
+
 ## Stakeholder  
 Department of Public Health (DPH)
 
