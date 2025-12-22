@@ -45,7 +45,7 @@ num_missing <- sapply(CleanedData, function(x) sum(is.na(x)))
 
 
 ## How to run code  
-To run the code first, go into the code folder and select which file you want to run. Then go into the Raw data folder and download the necessary raw data files. After, go back to the file you selected and install the packages provided. Then set the working directory and run the code.     
+To run the code first, go into the Code folder and select which file you want to run. Then go into the Raw Data folder and download the necessary raw data files. After, go back to the file you selected and install the packages provided. Then set the working directory and run the code.     
 
 
 
