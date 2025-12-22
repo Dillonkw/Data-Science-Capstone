@@ -20,7 +20,7 @@ National Health and Nutrition Examination Survey (NHANES)
 
 Observations: 17,721 | Variables: 108  
 
-###Outcome variable  
+### Outcome variable  
 BMI_Binary  
 Healthy >= 18.5 & <= 24.9  
 Unhealthy = Everything else
@@ -33,12 +33,22 @@ Sum_func <- function(a,b) {
   ifelse(is.na(a) & is.na(b), NA, rowSums(cbind(a,b), na.rm = TRUE))  
   }  
 ### Apply Function  
-  Total = Sum_func(Var1, Var2)    
+Total = Sum_func(Var1, Var2)    
 
 - Function to add the features together     
 - If one has a value and the other has a NA, then the one value will be used    
 - If both have value it will add the value together   
-- If both are NA, it keeps the total value as NA for that row   
+- If both are NA, it keeps the total value as NA for that row
+
+### Identify missing values function  
+num_missing <- sapply(CleanedData, function(x) sum(is.na(x)))  
+
+
+## How to run code  
+To run the code first, go into the code folder and select which file you want to run. Then go into the Raw data folder and download the necessary raw data files. After, go back to the file you selected and install the packages provided. Then set the working directory and run the code.     
+
+
+
 
 
 
