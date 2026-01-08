@@ -1,4 +1,4 @@
-# Predicting Healthy BMI
+# Identifying Factors of Healthy BMI Using Machine Learning
 ### Kyle Dillon  
 
 ## Overview  
